@@ -352,17 +352,17 @@ export default function ProprietaireDashboard() {
 
                 {/* Quick Stats - Plus compacts */}
                 <div className="flex gap-1 ">
-                  <div className="flex flex-col items-center p-2 bg-white rounded-lg border border-gray-200 min-w-[50px] hover:transform hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                    <div className="text-sm font-bold text-gray-900">8</div>
-                    <div className="text-[8px] text-gray-500 font-semibold uppercase tracking-wider">Propriétés</div>
+                  <div className="flex flex-col items-center p-1.5 bg-white rounded-lg border border-gray-200 min-w-[50px] hover:transform hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                    <div className="text-xs font-bold text-gray-900">8</div>
+                    <div className="text-[7px] text-gray-500 font-semibold uppercase tracking-wider">Propriétés</div>
                   </div>
-                  <div className="flex flex-col items-center p-2 bg-white rounded-lg border border-gray-200 min-w-[60px] hover:transform hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                    <div className="text-sm font-bold text-gray-900">12</div>
-                    <div className="text-[8px] text-gray-500 font-semibold uppercase tracking-wider">Locataires</div>
+                  <div className="flex flex-col items-center p-1.5 bg-white rounded-lg border border-gray-200 min-w-[60px] hover:transform hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                    <div className="text-xs font-bold text-gray-900">12</div>
+                    <div className="text-[7px] text-gray-500 font-semibold uppercase tracking-wider">Locataires</div>
                   </div>
-                  <div className="flex flex-col items-center p-2 bg-white rounded-lg border border-gray-200 min-w-[60px] hover:transform hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                    <div className="text-sm font-bold text-gray-900">95%</div>
-                    <div className="text-[8px] text-gray-500 font-semibold uppercase tracking-wider">Occupation</div>
+                  <div className="flex flex-col items-center p-1.5 bg-white rounded-lg border border-gray-200 min-w-[60px] hover:transform hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                    <div className="text-xs font-bold text-gray-900">95%</div>
+                    <div className="text-[7px] text-gray-500 font-semibold uppercase tracking-wider">Occupation</div>
                   </div>
                 </div>
 
@@ -403,68 +403,68 @@ export default function ProprietaireDashboard() {
           <div className="flex-1 flex p-4 gap-4 overflow-y-auto">
             <div className="flex-1">
               {/* Dashboard Overview Cards - Plus compactes */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-                <div className="bg-white p-4 rounded-xl border border-gray-200 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 ">
+                <div className="bg-white p-3 rounded-xl border border-gray-200 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-teal-400"></div>
-                  <div className="flex justify-between items-start mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-teal-400 rounded-lg flex items-center justify-center text-white text-lg">
+                  <div className="flex justify-between items-start mb-1">
+                    <div className="w-7 h-7 bg-gradient-to-br from-green-400 to-teal-400 rounded-lg flex items-center justify-center text-white text-sm">
                       💰
                     </div>
-                    <div className="text-[9px] font-semibold px-1.5 py-0.5 bg-green-100 text-green-600 rounded-full flex items-center gap-1">
+                    <div className="text-[8px] font-semibold px-1 py-0.5 bg-green-100 text-green-600 rounded-full flex items-center gap-1">
                       ↗ +12%
                     </div>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">2.45M</div>
-                  <div className="text-xs text-gray-500 font-semibold">Revenus Mensuels (FCFA)</div>
+                  <div className="text-lg font-bold text-gray-900 mb-1">2.45M</div>
+                  <div className="text-xs text-gray-500 font-semibold">Revenus Mensuels</div>
                 </div>
 
-                <div className="bg-white p-4 rounded-xl border border-gray-200 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
+                <div className="bg-white p-3 rounded-xl border border-gray-200 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 to-orange-500"></div>
-                  <div className="flex justify-between items-start mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-red-400 to-orange-500 rounded-lg flex items-center justify-center text-white text-lg">
+                  <div className="flex justify-between items-start mb-1">
+                    <div className="w-7 h-7 bg-gradient-to-br from-red-400 to-orange-500 rounded-lg flex items-center justify-center text-white text-sm">
                       🏢
                     </div>
-                    <div className="text-[9px] font-semibold px-1.5 py-0.5 bg-green-100 text-green-600 rounded-full flex items-center gap-1">
+                    <div className="text-[8px] font-semibold px-1 py-0.5 bg-green-100 text-green-600 rounded-full flex items-center gap-1">
                       ↗ +1 nouveau
                     </div>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">8</div>
+                  <div className="text-lg font-bold text-gray-900 mb-1">8</div>
                   <div className="text-xs text-gray-500 font-semibold">Propriétés Gérées</div>
                 </div>
 
-                <div className="bg-white p-4 rounded-xl border border-gray-200 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
+                <div className="bg-white p-3 rounded-xl border border-gray-200 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
-                  <div className="flex justify-between items-start mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center text-white text-lg">
+                  <div className="flex justify-between items-start mb-1">
+                    <div className="w-7 h-7 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center text-white text-sm">
                       👥
                     </div>
-                    <div className="text-[9px] font-semibold px-1.5 py-0.5 bg-green-100 text-green-600 rounded-full flex items-center gap-1">
+                    <div className="text-[8px] font-semibold px-1 py-0.5 bg-green-100 text-green-600 rounded-full flex items-center gap-1">
                       ↗ 95% occupation
                     </div>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">12</div>
+                  <div className="text-lg font-bold text-gray-900 mb-1">12</div>
                   <div className="text-xs text-gray-500 font-semibold">Locataires Actifs</div>
                 </div>
 
-                <div className="bg-white p-4 rounded-xl border border-gray-200 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
+                <div className="bg-white p-3 rounded-xl border border-gray-200 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-500"></div>
-                  <div className="flex justify-between items-start mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center text-white text-lg">
+                  <div className="flex justify-between items-start mb-1">
+                    <div className="w-7 h-7 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center text-white text-sm">
                       🔧
                     </div>
-                    <div className="text-[9px] font-semibold px-1.5 py-0.5 bg-red-100 text-red-600 rounded-full flex items-center gap-1">
+                    <div className="text-[8px] font-semibold px-1 py-0.5 bg-red-100 text-red-600 rounded-full flex items-center gap-1">
                       ↙ 3 en cours
                     </div>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">5</div>
+                  <div className="text-lg font-bold text-gray-900 mb-1">5</div>
                   <div className="text-xs text-gray-500 font-semibold">Demandes Maintenance</div>
                 </div>
               </div>
 
               {/* Quick Actions - Plus compactes */}
-              <div className="mb-6">
-                <div className="flex justify-between items-center mb-4">
-                  <div className="text-xl font-bold text-gray-900">Actions Rapides</div>
+              <div className="mb-4 mt-4">
+                <div className="flex justify-between items-center mb-1">
+                  <div className="text-lg font-bold text-gray-900">Actions Rapides</div>
                   <a href="#" className="text-red-500 text-sm font-semibold px-3 py-1.5 rounded-lg hover:bg-red-50 transition-colors">
                     Voir toutes →
                   </a>
@@ -474,7 +474,7 @@ export default function ProprietaireDashboard() {
                     <div
                       key={index}
                       onClick={() => alert(`Action: ${action.label}`)}
-                      className="flex flex-col items-center gap-3 p-4 bg-white border-2 border-gray-100 rounded-xl cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:border-red-400 relative overflow-hidden group"
+                      className="flex flex-col items-center gap-3 p-2 bg-white border-2 border-gray-100 rounded-xl cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:border-red-400 relative overflow-hidden group"
                     >
                       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                       <div className={`w-10 h-10 bg-gradient-to-br ${action.gradient} rounded-lg flex items-center justify-center text-white text-xl transition-transform duration-300 group-hover:scale-110`}>
@@ -549,15 +549,15 @@ export default function ProprietaireDashboard() {
 
                 <div className="flex justify-between">
                   <div className="text-center">
-                    <div className="text-lg font-bold text-gray-900">2.45M</div>
+                    <div className="text-sm font-bold text-gray-900">2.45M</div>
                     <div className="text-[9px] text-gray-500 font-semibold uppercase tracking-wider">Ce mois</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-lg font-bold text-gray-900">2.18M</div>
+                    <div className="text-sm font-bold text-gray-900">2.18M</div>
                     <div className="text-[9px] text-gray-500 font-semibold uppercase tracking-wider">Mois dernier</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-lg font-bold text-gray-900">+12%</div>
+                    <div className="text-sm font-bold text-gray-900">+12%</div>
                     <div className="text-[9px] text-gray-500 font-semibold uppercase tracking-wider">Croissance</div>
                   </div>
                 </div>
