@@ -326,8 +326,8 @@ export default function ProprietaireDashboard() {
                 <div className="text-red-500 font-semibold flex items-center gap-2 text-xs">
                   <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
                   <div>
-                    <div>Gestion de portefeuille immobilier</div>
-                    <div>{currentTime.toLocaleTimeString('fr-FR')}</div>
+                    <div>Bienvenue • {currentTime.toLocaleTimeString('fr-FR')}</div>
+                    
                   </div>
                 </div>
               </div>
