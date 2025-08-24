@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, Filter, Grid, List, Download, Plus, Edit, Trash2, Eye, MapPin, Home, Building } from 'lucide-react';
 
 export default function Properties({ 
@@ -128,8 +128,20 @@ export default function Properties({
     alert('Exportation des données en cours...');
   };
 
+      const [isVisible, setIsVisible] = useState(false);
+  
+      useEffect(() => {
+          setTimeout(() => setIsVisible(true), 100);
+      }, []);
+  
+
   return (
-    <div className="flex-1 flex p-4 gap-4 overflow-y-auto">
+    // <div className="flex-1 flex p-4 gap-4 overflow-y-auto">
+            <div className={`
+  flex-1 flex p-4 gap-4 overflow-y-auto
+  transform transition-all duration-700 ease-out
+  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+`}>
       <div className="flex-1">
         {/* En-tête avec titre et bouton principal */}
         <div className="flex justify-between items-center mb-6">
