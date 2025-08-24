@@ -8,13 +8,13 @@ const EvaluationIAModal = ({ isOpen, onClose }) => {
     const [formData, setFormData] = useState({
         // Sélection de propriété
         selectedProperty: '',
-
+        
         // Auto-rempli après sélection
         address: '',
         propertyType: '',
         surface: '',
         rooms: '',
-
+        
         // Informations complémentaires
         condition: '',
         neighborhood: '',
@@ -28,7 +28,7 @@ const EvaluationIAModal = ({ isOpen, onClose }) => {
             security: false,
             elevator: false
         },
-
+        
         // Paramètres financiers
         leaseDuration: '',
         currentPrice: ''
@@ -97,7 +97,7 @@ const EvaluationIAModal = ({ isOpen, onClose }) => {
     const handlePropertySelection = (e) => {
         const propertyId = e.target.value;
         const selectedProp = userProperties.find(prop => prop.id === parseInt(propertyId));
-
+        
         if (selectedProp) {
             setFormData(prev => ({
                 ...prev,
@@ -159,18 +159,18 @@ const EvaluationIAModal = ({ isOpen, onClose }) => {
         // Simulation d'appel API avec délai
         setTimeout(() => {
             // Calcul simulé basé sur les données
-            const basePrice = formData.propertyType === 'Studio' ? 80000 :
-                formData.propertyType === 'Appartement' ? 150000 : 200000;
-
+            const basePrice = formData.propertyType === 'Studio' ? 80000 : 
+                             formData.propertyType === 'Appartement' ? 150000 : 200000;
+            
             const surfaceMultiplier = parseInt(formData.surface) / 100;
-            const conditionMultiplier = formData.condition === 'Neuf' ? 1.2 :
-                formData.condition === 'Bon état' ? 1.0 : 0.8;
-
+            const conditionMultiplier = formData.condition === 'Neuf' ? 1.2 : 
+                                      formData.condition === 'Bon état' ? 1.0 : 0.8;
+            
             const characteristicsBonus = Object.values(formData.characteristics)
                 .filter(Boolean).length * 10000;
 
             const estimatedPrice = Math.round((basePrice * surfaceMultiplier * conditionMultiplier) + characteristicsBonus);
-
+            
             setEvaluationResult({
                 estimatedPrice,
                 confidence: 87,
@@ -187,11 +187,11 @@ const EvaluationIAModal = ({ isOpen, onClose }) => {
                     { factor: 'État du bien', impact: formData.condition === 'Neuf' ? '+20%' : formData.condition === 'Bon état' ? '0%' : '-20%', description: formData.condition },
                     { factor: 'Équipements', impact: '+5%', description: `${Object.values(formData.characteristics).filter(Boolean).length} équipements` }
                 ],
-                recommendation: estimatedPrice > (parseInt(formData.currentPrice) || 0) ?
+                recommendation: estimatedPrice > (parseInt(formData.currentPrice) || 0) ? 
                     'Le prix estimé est supérieur au prix actuel. Vous pourriez augmenter le loyer.' :
                     'Le prix estimé est cohérent avec le marché actuel.'
             });
-
+            
             setLoading(false);
         }, 2000);
     };
@@ -215,9 +215,7 @@ const EvaluationIAModal = ({ isOpen, onClose }) => {
         setLoading(false);
     };
 
- 
-    const handleClose = (e) => {
-        if (e) e.stopPropagation();
+    const handleClose = () => {
         onClose();
         resetForm();
     };
@@ -258,12 +256,13 @@ const EvaluationIAModal = ({ isOpen, onClose }) => {
                                     key={tab.id}
                                     onClick={() => !loading && setActiveTab(tab.id)}
                                     disabled={loading && tab.id !== 'result'}
-                                    className={`flex items-center gap-2 py-3 px-4 whitespace-nowrap border-b-2 font-medium text-sm transition-colors ${activeTab === tab.id
+                                    className={`flex items-center gap-2 py-3 px-4 whitespace-nowrap border-b-2 font-medium text-sm transition-colors ${
+                                        activeTab === tab.id
                                             ? 'border-blue-500 text-blue-600 bg-white'
                                             : loading && tab.id !== 'result'
-                                                ? 'border-transparent text-gray-300'
-                                                : 'border-transparent text-gray-500 hover:text-gray-700'
-                                        }`}
+                                            ? 'border-transparent text-gray-300'
+                                            : 'border-transparent text-gray-500 hover:text-gray-700'
+                                    }`}
                                 >
                                     <Icon size={16} />
                                     {tab.label}
@@ -289,8 +288,9 @@ const EvaluationIAModal = ({ isOpen, onClose }) => {
                                         name="selectedProperty"
                                         value={formData.selectedProperty}
                                         onChange={handlePropertySelection}
-                                        className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.selectedProperty ? 'border-red-500' : 'border-gray-300'
-                                            }`}
+                                        className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                                            errors.selectedProperty ? 'border-red-500' : 'border-gray-300'
+                                        }`}
                                     >
                                         <option value="">Sélectionner une propriété</option>
                                         {userProperties.map(property => (
@@ -362,8 +362,9 @@ const EvaluationIAModal = ({ isOpen, onClose }) => {
                                             name="condition"
                                             value={formData.condition}
                                             onChange={handleInputChange}
-                                            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.condition ? 'border-red-500' : 'border-gray-300'
-                                                }`}
+                                            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                                                errors.condition ? 'border-red-500' : 'border-gray-300'
+                                            }`}
                                         >
                                             <option value="">Sélectionner l'état</option>
                                             {conditionOptions.map(condition => (
