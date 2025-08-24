@@ -113,9 +113,9 @@ return (
                     <button
                         // onClick={() => setIsModalOpen(true)}
                         onClick={() => {
-                            console.log('Bouton cliqué !');
+                          
                             setIsModalOpen(true);
-                            console.log('Modal state:', isModalOpen);
+                            
                         }
                         }
                         className="bg-gradient-to-r from-red-400 to-orange-500 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg text-sm"

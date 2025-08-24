@@ -4,7 +4,7 @@ import { Search, Filter, Grid, List, Download, Plus, Edit, Trash2, Eye, MapPin, 
 export default function Properties({ 
   setIsModalOpen,
   formatCurrency = (amount) => new Intl.NumberFormat('fr-FR').format(amount) + ' FCFA'
-}) {
+}) {    
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [viewMode, setViewMode] = useState('grid'); // 'grid' ou 'list'
@@ -137,13 +137,18 @@ export default function Properties({
             <h1 className="text-2xl font-bold text-gray-900">Mes Propriétés</h1>
             <p className="text-gray-600 text-sm mt-1">Gérez toutes vos propriétés immobilières</p>
           </div>
-          <button
-            onClick={() => setIsModalOpen && setIsModalOpen(true)}
-            className="bg-gradient-to-r from-red-400 to-orange-500 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2"
-          >
-            <Plus size={20} />
-            Ajouter une propriété
-          </button>
+         <button
+                        // onClick={() => setIsModalOpen(true)}
+                        onClick={() => {
+                          
+                            setIsModalOpen(true);
+                            
+                        }
+                        }
+                        className="bg-gradient-to-r from-red-400 to-orange-500 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg text-sm"
+                    >
+                        + Ajouter Propriété
+                    </button>
         </div>
 
         {/* Barre de filtres et recherche */}

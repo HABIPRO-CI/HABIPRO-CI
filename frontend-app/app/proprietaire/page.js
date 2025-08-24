@@ -37,7 +37,7 @@ export default function ProprietaireDashboard() {
         notifications={notifications}
         quickActions={quickActions}
       />;
-      case 'properties': return <Properties />;
+      case 'properties': return <Properties setIsModalOpen={setIsModalOpen} />;
       case 'tenants': return <Tenants />;
       case 'revenue': return <Revenue />;
       case 'contracts': return <Contracts />;
