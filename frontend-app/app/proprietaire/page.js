@@ -1,5 +1,10 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import PropertyFormModal from "../components/AjouterProriete";
+import TenantFormModal from "../components/AjouterLocatire";
+import ContractFormModal from "../components/CréerContrat";
+import NouvelleAnnonceModal from "../components/PublierAnnonce";
+import EvaluationIAModal from "../components/ÉvaluationIA";
 
 export default function ProprietaireDashboard() {
   const [activeNav, setActiveNav] = useState('dashboard');
@@ -7,6 +12,37 @@ export default function ProprietaireDashboard() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [revenueValue, setRevenueValue] = useState(2450000);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+
+  // Pour les modals
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTenantModalOpen, setIsTenantModalOpen] = useState(false);
+  const [isContractModalOpen, setIsContractModalOpen] = useState(false);
+  const [isAnnonceModalOpen, setIsAnnonceModalOpen] = useState(false);
+  const [isÉvaluationIAModalOpen, setIsÉvaluationIAModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const closeTenantModal = () => {
+    setIsTenantModalOpen(false);
+  };
+
+  const closeContractModal = () => {
+    setIsContractModalOpen(false);
+  };
+
+  const closeAnnonceModal = () => {
+    setIsAnnonceModalOpen(false);
+  };
+
+  const closeÉvaluationIAModal = () => {
+    setIsAnnonceModalOpen(false);
+  };
 
   // Update time every second
   useEffect(() => {
@@ -52,11 +88,36 @@ export default function ProprietaireDashboard() {
   ];
 
   const quickActions = [
-    { icon: '🏢', label: 'Ajouter Propriété', gradient: 'from-red-400 to-orange-400' },
-    { icon: '👥', label: 'Nouveau Locataire', gradient: 'from-blue-400 to-blue-600' },
-    { icon: '📄', label: 'Créer Contrat', gradient: 'from-green-400 to-teal-400' },
-    { icon: '📈', label: 'Évaluation IA', gradient: 'from-purple-400 to-indigo-500' },
-    { icon: '📢', label: 'Publier Annonce', gradient: 'from-yellow-400 to-orange-500' },
+    // { icon: '🏢', label: 'Ajouter Propriété', gradient: 'from-red-400 to-orange-400',onClick: () => setIsModalOpen(true) },
+    {
+      icon: '🏢',
+      label: 'Ajouter Propriété',
+      gradient: 'from-red-400 to-orange-400',
+      onClick: () => setIsModalOpen(true)
+    },
+    // { icon: '👥', label: 'Nouveau Locataire', gradient: 'from-blue-400 to-blue-600' },
+    {
+      icon: '👥',
+      label: 'Nouveau Locataire',
+      gradient: 'from-blue-400 to-blue-600',
+      onClick: () => setIsTenantModalOpen(true)
+    },
+
+    {
+      icon: '📄',
+      label: 'Créer Contrat',
+      gradient: 'from-green-400 to-teal-400',
+      onClick: () => setIsContractModalOpen(true)
+    },
+    { icon: '📈', 
+      label: 'Évaluation IA', 
+      gradient: 'from-purple-400 to-indigo-500',
+      onClick: () => setIsÉvaluationIAModalOpen(true) },
+
+    { icon: '📢', 
+      label: 'Publier Annonce', 
+      gradient: 'from-yellow-400 to-orange-500',
+      onClick: () => setIsModalOpen(true) },
     { icon: '🛠️', label: 'Prestataires', gradient: 'from-blue-500 to-indigo-600' },
   ];
 
@@ -327,7 +388,7 @@ export default function ProprietaireDashboard() {
                   <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
                   <div>
                     <div>Bienvenue • {currentTime.toLocaleTimeString('fr-FR')}</div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -472,8 +533,10 @@ export default function ProprietaireDashboard() {
                 <div className="grid grid-cols-6 gap-3">
                   {quickActions.map((action, index) => (
                     <div
+                      // key={index}
+                      // onClick={() => alert(`Action: ${action.label}`)}
                       key={index}
-                      onClick={() => alert(`Action: ${action.label}`)}
+                      onClick={action.onClick || (() => alert(`Action: ${action.label}`))}
                       className="flex flex-col items-center gap-3 p-2 bg-white border-2 border-gray-100 rounded-xl cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:border-red-400 relative overflow-hidden group"
                     >
                       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
@@ -491,7 +554,13 @@ export default function ProprietaireDashboard() {
                 <div className="p-4 border-b border-gray-200 flex justify-between items-center">
                   <div className="text-xl font-bold text-gray-900">Mes Propriétés</div>
                   <button
-                    onClick={() => alert('Formulaire d\'ajout de propriété à implémenter')}
+                    // onClick={() => setIsModalOpen(true)}
+                    onClick={() => {
+                      console.log('Bouton cliqué !');
+                      setIsModalOpen(true);
+                      console.log('Modal state:', isModalOpen);
+                    }
+                    }
                     className="bg-gradient-to-r from-red-400 to-orange-500 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg text-sm"
                   >
                     + Ajouter Propriété
@@ -630,6 +699,13 @@ export default function ProprietaireDashboard() {
           </div>
         </div>
       </div>
-    </div>
+      <PropertyFormModal isOpen={isModalOpen} onClose={closeModal} />
+      <TenantFormModal isOpen={isTenantModalOpen} onClose={closeTenantModal} />
+      <ContractFormModal isOpen={isContractModalOpen} onClose={closeContractModal} />
+      <NouvelleAnnonceModal isOpen={isAnnonceModalOpen} onClose={closeAnnonceModal} />
+      <EvaluationIAModal isOpen={isÉvaluationIAModalOpen} onClose={closeÉvaluationIAModal} />
+       
+
+    </div >
   );
 }

@@ -399,6 +399,7 @@ const HabiproTenantDashboard = () => {
                 ))}
               </div>
             </div>
+
           </div>
 
           {/* Right Panel */}
@@ -433,7 +434,7 @@ const HabiproTenantDashboard = () => {
                 ))}
               </div>
 
-              <button className="w-full mt-2  bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-3 rounded-lg text-sm font-semibold hover:shadow-lg transition-all">
+              <button className="w-full mt-2 text-xs  bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
                 Effectuer tous les paiements (250.000 FCFA)
               </button>
             </div>
